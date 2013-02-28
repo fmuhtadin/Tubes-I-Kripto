@@ -1,0 +1,10 @@
+C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\bin\Debug\AviFile.dll
+C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\bin\Debug\AviFile.pdb
+C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\obj\Debug\AviFile.dll
+C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\obj\Debug\AviFile.pdb
+C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\obj\Debug\AviFile.csprojResolveAssemblyReference.cache
+C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\obj\Debug\AviFile.csprojResolveAssemblyReference.cache
+C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\obj\Debug\AviFile.dll
+C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\obj\Debug\AviFile.pdb
+C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\bin\Debug\AviFile.dll
+C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\bin\Debug\AviFile.pdb

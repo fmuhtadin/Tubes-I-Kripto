@@ -11,3 +11,8 @@ C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganograp
 C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\Interop.WMPLib.dll
 C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\AxInterop.WMPLib.dll
 C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\Steganography.csproj.ResolveComReference.cache
+C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.csproj.ResolveComReference.cache
+C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.exe
+C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.pdb

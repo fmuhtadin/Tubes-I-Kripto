@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AviFile">
+</Property><Property Name="Solution File" Value="C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\AviFile.sln">
+</Property><Property Name="Date" Value="Tuesday, February 26, 2013">
+</Property><Property Name="Time" Value="19:19">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="AviFile.sln" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\AviFile.sln">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="AviFile.csproj" Description="Project file successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\AviFile.csproj">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="AssemblyInfo.cs" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="AudioStream.cs" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\AudioStream.cs">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="Avi.cs" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\Avi.cs">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="AviManager.cs" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\AviManager.cs">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="AviPlayer.cs" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\AviPlayer.cs">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="AviStream.cs" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\AviStream.cs">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="EditableVideoStream.cs" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\EditableVideoStream.cs">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="VideoStream.cs" Description="File successfully backed up as C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\Backup\VideoStream.cs">
+</Event><Event ErrorLevel="0" Project="AviFile" Source="AviFile.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="AviFile" Source="AviFile.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="AviFile.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="AviFile.sln" Description="Converted">
+</Event></UpgradeLog>

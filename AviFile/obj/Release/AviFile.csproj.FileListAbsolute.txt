@@ -1,0 +1,2 @@
+C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\bin\Release\AviFile.dll
+C:\Users\Rubiano\Documents\[ITB] Berkas Perkuliahan\Semester 6\IF3058 Kriptografi\Tugas\Tugas Besar I\Referensi\avifilewrapperdemo_src\aviFileWrapperDemo_src\AviFile\obj\Release\AviFile.dll
