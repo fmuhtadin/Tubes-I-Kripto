@@ -1,0 +1,13 @@
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\bin\Debug\Steganography.exe
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\bin\Debug\Steganography.pdb
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\WindowsFormsApplication1.Steganography.resources
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\Steganography.csproj.GenerateResource.Cache
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\Steganography.exe
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\Steganography.pdb
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\Steganography.csprojResolveAssemblyReference.cache
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\bin\Debug\Interop.WMPLib.dll
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Rubiano\documents\visual studio 2010\Projects\Steganography\Steganography\obj\x86\Debug\Steganography.csproj.ResolveComReference.cache
