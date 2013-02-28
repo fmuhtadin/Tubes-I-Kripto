@@ -1,0 +1,9 @@
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\bin\Debug\Steganografi.exe
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\bin\Debug\Steganografi.pdb
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\obj\x86\Debug\Steganografi.exe
+C:\Users\novriady\Documents\Visual Studio 2010\Projects\Steganografi\Steganografi\obj\x86\Debug\Steganografi.pdb
