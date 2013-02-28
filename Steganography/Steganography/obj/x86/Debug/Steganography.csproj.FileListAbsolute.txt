@@ -24,3 +24,5 @@ C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj
 C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\WindowsFormsApplication1.Steganography.resources
 C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.csproj.GenerateResource.Cache
+C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\AviFile.dll
+C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\AviFile.pdb
