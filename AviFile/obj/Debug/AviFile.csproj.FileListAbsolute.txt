@@ -8,3 +8,7 @@ C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\obj\Debug\AviFile
 C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\obj\Debug\AviFile.pdb
 C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\bin\Debug\AviFile.dll
 C:\Users\Rubiano\Documents\Visual Studio 2010\Projects\AviFile\bin\Debug\AviFile.pdb
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\AviFile\bin\Debug\AviFile.dll
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\AviFile\bin\Debug\AviFile.pdb
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\AviFile\obj\Debug\AviFile.dll
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\AviFile\obj\Debug\AviFile.pdb

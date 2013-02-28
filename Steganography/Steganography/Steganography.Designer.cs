@@ -203,7 +203,7 @@
             this.btnDecode.TabIndex = 7;
             this.btnDecode.Text = "Decode";
             this.btnDecode.UseVisualStyleBackColor = true;
-            this.btnDecode.Click += new System.EventHandler(this.btnDecode_Click);
+            this.btnDecode.Click += new System.EventHandler(this.btnDecode_Click2);
             // 
             // groupBox5
             // 
@@ -233,7 +233,7 @@
             this.btnEncode.TabIndex = 6;
             this.btnEncode.Text = "Encode";
             this.btnEncode.UseVisualStyleBackColor = true;
-            this.btnEncode.Click += new System.EventHandler(this.btnEncode_Click);
+            this.btnEncode.Click += new System.EventHandler(this.btnEncode_Click2);
             // 
             // axWindowsMediaPlayer1
             // 

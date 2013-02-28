@@ -26,3 +26,18 @@ C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj
 C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.csproj.GenerateResource.Cache
 C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\AviFile.dll
 C:\Users\Rubiano\Documents\GitHub\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\AviFile.pdb
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Interop.WMPLib.dll
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\AxInterop.WMPLib.dll
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.csproj.ResolveComReference.cache
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.exe
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.pdb
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.csprojResolveAssemblyReference.cache
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\WindowsFormsApplication1.Steganography.resources
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\obj\x86\Debug\Steganography.csproj.GenerateResource.Cache
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\Steganography.exe
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\Steganography.pdb
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\AviFile.dll
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\AviFile.pdb
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\Interop.WMPLib.dll
+D:\Documents\My Documents\Kuliah\Semester 6\IF3058 Kriptografi\Tubes 1\tubes1\Tubes-I-Kripto\Steganography\Steganography\bin\Debug\AxInterop.WMPLib.dll
