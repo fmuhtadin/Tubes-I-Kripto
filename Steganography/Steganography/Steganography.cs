@@ -104,7 +104,7 @@ namespace WindowsFormsApplication1
                 BitArray sizeBits = new BitArray(size);
                 BitArray extBits = new BitArray(extension);
 
-                int maxIdx = (bits.Count / 3);
+                int maxIdx = ((bits.Count + 1) / 3);
 
                 int[] idx = new int[bytes];
 
@@ -542,6 +542,7 @@ namespace WindowsFormsApplication1
 
                 tempByte = ExtractByteFromBitmap(arraybmp[0]);
                 int numFramesToDecode = BitConverter.ToInt32(tempByte, 0);
+                arraybmp.RemoveAt(0);
 
                 for (int i = 0; i < numFramesToDecode; i++)
                 {
