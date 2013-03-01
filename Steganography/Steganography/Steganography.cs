@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
 
         private int framesize;
         private string extension;
+        private List<double> rms = new List<double>();
 
         public Steganography()
         {
@@ -87,6 +88,62 @@ namespace WindowsFormsApplication1
             return ((b & (byte)(1 << position)) != 0);
         }
 
+        private double calculatePSNR(Bitmap bmp1, Bitmap bmp2)
+        {
+            double sum = 0;
+            for (int i = 0; i < bmp1.Width; i++)
+            {
+                for (int j = 0; j < bmp1.Height; j++)
+                {
+                    sum += Math.Pow(calculatePixelDiff(bmp1.GetPixel(i, j), bmp2.GetPixel(i, j)),2);
+                }
+            }
+             return Math.Sqrt(sum / (bmp1.Height * bmp1.Width));
+        }
+
+        private int calculatePixelDiff(Color color1, Color color2)
+        {
+            Byte[] byteRes = new Byte[4];
+
+            BitArray Ra = new BitArray(new byte[] { color1.R });
+            BitArray Ga = new BitArray(new byte[] { color1.G });
+            BitArray Ba = new BitArray(new byte[] { color1.B });
+            BitArray Aa = new BitArray(new byte[] { color1.A });
+
+            BitArray Rb = new BitArray(new byte[] { color2.R });
+            BitArray Gb = new BitArray(new byte[] { color2.G });
+            BitArray Bb = new BitArray(new byte[] { color2.B });
+            BitArray Ab = new BitArray(new byte[] { color2.A });
+
+            BitArray Rx = Ra.Xor(Rb);
+            BitArray Gx = Ga.Xor(Gb);
+            BitArray Bx = Ba.Xor(Bb);
+            BitArray Ax = Aa.Xor(Ab);
+            int res = 0;
+            for (int i=0; i<8; i++)
+            {
+                byteRes[0] = SetBit(byteRes[0], i, Rx.Get(i));
+            }
+            res += BitConverter.ToInt32(byteRes, 0);
+            for (int i = 0; i < 8; i++)
+            {
+                byteRes[0] = SetBit(byteRes[0], i, Gx.Get(i));
+            }
+            res += BitConverter.ToInt32(byteRes, 0);
+            for (int i = 0; i < 8; i++)
+            {
+                byteRes[0] = SetBit(byteRes[0], i, Bx.Get(i));
+            }
+            res += BitConverter.ToInt32(byteRes, 0);
+            for (int i = 0; i < 8; i++)
+            {
+                byteRes[0] = SetBit(byteRes[0], i, Ax.Get(i));
+            }
+            res += BitConverter.ToInt32(byteRes, 0);
+            //int res = BitConverter.ToInt32(byteRes, 0);
+            return res;
+        }
+
         public Bitmap HideByteIntoBitmap2bit(byte[] myArray, string key, Bitmap bmp)
         {
             int fileSize = myArray.Length;
@@ -94,6 +151,7 @@ namespace WindowsFormsApplication1
             int bytes = bmp.Width * bmp.Height;
             byte[] extension = System.Text.Encoding.Default.GetBytes(getExtension(txtHidden.Text));
             byte[] size = BitConverter.GetBytes(fileSize);
+            Bitmap bmpCompare = (Bitmap)bmp.Clone();
 
 
             if (myArray.Length <= (6 * bytes) / 8 - 7)
@@ -235,6 +293,7 @@ namespace WindowsFormsApplication1
                     bmp.SetPixel(choose % bmp.Width, choose / bmp.Width, Color.FromArgb(r, g, b));
                 }
             }
+            rms.Add(calculatePSNR(bmp,bmpCompare));
             return bmp;
         }
 
@@ -245,7 +304,7 @@ namespace WindowsFormsApplication1
             int bytes = bmp.Width * bmp.Height;
             byte[] extension = System.Text.Encoding.Default.GetBytes(getExtension(txtHidden.Text));
             byte[] size = BitConverter.GetBytes(fileSize);
-
+            Bitmap bmpCompare = (Bitmap)bmp.Clone();
 
             if (myArray.Length <= (3 * bytes) / 8 - 7)
             {
@@ -361,6 +420,7 @@ namespace WindowsFormsApplication1
                     }
                     bmp.SetPixel(choose % bmp.Width, choose / bmp.Width, Color.FromArgb(r, g, b));
                 }
+                rms.Add(calculatePSNR(bmp,bmpCompare));
                 return bmp;
             }
             else
@@ -1085,6 +1145,19 @@ namespace WindowsFormsApplication1
                     arraybmp.RemoveAt(0);
                 }
                 SaveBitmapStreamToAvi(arraybmpresult);
+                
+                List<double> PSNR = new List<double>();
+                foreach (double d in rms)
+                {
+                    PSNR.Add(20*Math.Log10(256/d));
+                }
+                double PSNRsum = 0;
+                foreach (double d in PSNR)
+                {
+                    PSNRsum += d;
+                }
+                double PSNRavg =  PSNRsum/PSNR.Count;
+                rtxtPSNR.Text = PSNRavg.ToString();
             }
             catch (Exception ex)
             {
@@ -1151,6 +1224,7 @@ namespace WindowsFormsApplication1
             txtHidden.Text = "";
             txtKey.Text = "";
             slNotification.Text = "";
+            rtxtPSNR.Text = "";
         }
     }
 }
