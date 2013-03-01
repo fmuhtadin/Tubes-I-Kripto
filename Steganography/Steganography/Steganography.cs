@@ -89,7 +89,7 @@ namespace WindowsFormsApplication1
 
         public Bitmap HideByteIntoBitmap(byte[] myArray, string key, Bitmap bmp)
         {
-            int fileSize = (int)myArray.Length;
+            int fileSize = myArray.Length;
             int bytes = bmp.Width * bmp.Height;
             byte[] extension = System.Text.Encoding.Default.GetBytes(getExtension(txtHidden.Text));
             byte[] size = BitConverter.GetBytes(fileSize);
@@ -538,12 +538,24 @@ namespace WindowsFormsApplication1
                 Byte[] resultMessage;
                 List<Byte[]> tempByteArr = new List<byte[]>();
 
-                foreach (Bitmap bmp in arraybmp)
+                Byte[] tempByte;
+
+                tempByte = ExtractByteFromBitmap(arraybmp[0]);
+                int numFramesToDecode = BitConverter.ToInt32(tempByte, 0);
+
+                for (int i = 0; i < numFramesToDecode; i++)
                 {
-                    Byte[] tempByte;
-                    tempByte = ExtractByteFromBitmap(bmp);
+                    tempByte = ExtractByteFromBitmap(arraybmp[0]);
+                    arraybmp.RemoveAt(0);
                     tempByteArr.Add(tempByte);
                 }
+
+                //foreach (Bitmap bmp in arraybmp)
+                //{
+                //    Byte[] tempByte;
+                //    tempByte = ExtractByteFromBitmap(bmp);
+                //    tempByteArr.Add(tempByte);
+                //}
 
                 resultMessage = MergeMessageBytes(tempByteArr);
 
@@ -581,8 +593,13 @@ namespace WindowsFormsApplication1
                 List<Bitmap> arraybmpresult = new List<Bitmap>();
                 Bitmap tempbmp;
 
-                if (arrayBytes.Count > arraybmp.Count)
+                if (arrayBytes.Count+1 > arraybmp.Count)
                     throw new Exception("File Message tidak muat untuk cover");
+
+                Byte[] numFrames = BitConverter.GetBytes(arrayBytes.Count);
+                tempbmp = HideByteIntoBitmap(numFrames, txtKey.Text, arraybmp[0]);
+                arraybmpresult.Add(tempbmp);
+                arraybmp.RemoveAt(0);
 
                 while (arrayBytes.Count != 0)
                 {
