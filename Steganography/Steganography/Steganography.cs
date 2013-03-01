@@ -87,6 +87,158 @@ namespace WindowsFormsApplication1
             return ((b & (byte)(1 << position)) != 0);
         }
 
+        public Bitmap HideByteIntoBitmap2bit(byte[] myArray, string key, Bitmap bmp)
+        {
+            int fileSize = myArray.Length;
+
+            int bytes = bmp.Width * bmp.Height;
+            byte[] extension = System.Text.Encoding.Default.GetBytes(getExtension(txtHidden.Text));
+            byte[] size = BitConverter.GetBytes(fileSize);
+
+
+            if (myArray.Length <= (6 * bytes) / 8 - 7)
+            {
+                Color pixelColor;
+                byte r, g, b;
+
+                BitArray bits = new BitArray(myArray);
+                BitArray sizeBits = new BitArray(size);
+                BitArray extBits = new BitArray(extension);
+
+                int maxIdx = ((bits.Count + 1) / 6);
+
+                int[] idx = new int[bytes];
+
+                int choose, maxSize = bytes, a;
+
+                for (int ctr = 0; ctr < bytes; ctr++)
+                {
+                    idx[ctr] = ctr;
+                }
+
+                Random randomer = new Random(getKey(txtKey.Text));
+
+                for (int i = 0; i < 5; i++)
+                {
+                    a = randomer.Next(maxSize);
+                    choose = idx[a];
+                    idx[a] = idx[--maxSize];
+
+                    pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+                    r = pixelColor.R;
+                    g = pixelColor.G;
+                    b = pixelColor.B;
+
+                    r = SetBit(r, 0, sizeBits.Get(6 * i));
+                    g = SetBit(g, 0, sizeBits.Get(6 * i + 1));
+                    b = SetBit(b, 0, sizeBits.Get(6 * i + 2));
+                    r = SetBit(r, 1, sizeBits.Get(6 * i + 3));
+                    g = SetBit(g, 1, sizeBits.Get(6 * i + 4));
+                    b = SetBit(b, 1, sizeBits.Get(6 * i + 5));
+                    bmp.SetPixel(choose % bmp.Width, choose / bmp.Width, Color.FromArgb(r, g, b));
+                }
+
+                a = randomer.Next(maxSize);
+                choose = idx[a];
+                idx[a] = idx[--maxSize];
+
+                pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+                r = pixelColor.R;
+                g = pixelColor.G;
+                b = pixelColor.B;
+
+                r = SetBit(r, 0, sizeBits.Get(30));
+                g = SetBit(g, 0, sizeBits.Get(31));
+                b = SetBit(b, 0, extBits.Get(0));
+                r = SetBit(r, 1, extBits.Get(1));
+                g = SetBit(g, 1, extBits.Get(2));
+                b = SetBit(b, 1, extBits.Get(3));
+                bmp.SetPixel(choose % bmp.Width, choose / bmp.Width, Color.FromArgb(r, g, b));
+
+                for (int i = 0; i < 3; i++)
+                {
+                    a = randomer.Next(maxSize);
+                    choose = idx[a];
+                    idx[a] = idx[--maxSize];
+
+                    pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+                    r = pixelColor.R;
+                    g = pixelColor.G;
+                    b = pixelColor.B;
+
+                    r = SetBit(r, 0, extBits.Get(6 * i + 4));
+                    g = SetBit(g, 0, extBits.Get(6 * i + 5));
+                    b = SetBit(b, 0, extBits.Get(6 * i + 6));
+                    r = SetBit(r, 1, extBits.Get(6 * i + 7));
+                    g = SetBit(g, 1, extBits.Get(6 * i + 8));
+                    b = SetBit(b, 1, extBits.Get(6 * i + 9));
+                    bmp.SetPixel(choose % bmp.Width, choose / bmp.Width, Color.FromArgb(r, g, b));
+                }
+
+                a = randomer.Next(maxSize);
+                choose = idx[a];
+                idx[a] = idx[--maxSize];
+
+                pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+                r = pixelColor.R;
+                g = pixelColor.G;
+                b = pixelColor.B;
+
+                r = SetBit(r, 0, extBits.Get(22));
+                g = SetBit(g, 0, extBits.Get(23));
+                b = SetBit(b, 0, bits.Get(0));
+                r = SetBit(r, 1, bits.Get(1));
+                g = SetBit(g, 1, bits.Get(2));
+                b = SetBit(b, 1, bits.Get(3));
+                bmp.SetPixel(choose % bmp.Width, choose / bmp.Width, Color.FromArgb(r, g, b));
+
+                for (int i = 0; i < maxIdx; i++)
+                {
+                    a = randomer.Next(maxSize);
+                    choose = idx[a];
+                    idx[a] = idx[--maxSize];
+
+                    pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+                    r = pixelColor.R;
+                    g = pixelColor.G;
+                    b = pixelColor.B;
+
+                    if (6 * i + 4 < bits.Count)
+                    {
+                        r = SetBit(r, 0, bits.Get(6 * i + 4));
+                    }
+                    if (6 * i + 5 < bits.Count)
+                    {
+                        g = SetBit(g, 0, bits.Get(6 * i + 5));
+                    }
+                    if (6 * i + 6 < bits.Count)
+                    {
+                        b = SetBit(b, 0, bits.Get(6 * i + 6));
+                    }
+                    if (6 * i + 7 < bits.Count)
+                    {
+                        r = SetBit(r, 1, bits.Get(6 * i + 7));
+                    }
+                    if (6 * i + 8 < bits.Count)
+                    {
+                        g = SetBit(g, 1, bits.Get(6 * i + 8));
+                    }
+                    if (6 * i + 9 < bits.Count)
+                    {
+                        b = SetBit(b, 1, bits.Get(6 * i + 9));
+                    }
+                    bmp.SetPixel(choose % bmp.Width, choose / bmp.Width, Color.FromArgb(r, g, b));
+                }
+            }
+            return bmp;
+        }
+
+
         public Bitmap HideByteIntoBitmap(byte[] myArray, string key, Bitmap bmp)
         {
             int fileSize = myArray.Length;
@@ -216,6 +368,299 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Byte Size is not valid");
                 return bmp;
             }
+        }
+
+        private Byte[] ExtractByteFromBitmap2bit(Bitmap bmp)
+        {
+
+            int tripbytes = bmp.Width * bmp.Height;
+
+            Random randomer = new Random(getKey(txtKey.Text));
+
+            int choose, maxSize = tripbytes;
+
+            int[] idx = new int[tripbytes];
+
+            for (int ctr = 0; ctr < tripbytes; ctr++)
+            {
+                idx[ctr] = ctr;
+            }
+
+
+            byte[] sizeByte = new byte[4];
+            byte[] extByte = new byte[3];
+
+            int counter = 0, temp, byteIndex = 0, a;
+
+            byte aByte = (byte)0;
+
+            Color pixelColor;
+
+            byte r, g, b;
+
+            for (int i = 0; i < 5; i++)
+            {
+                a = randomer.Next(maxSize);
+                choose = idx[a];
+                idx[a] = idx[--maxSize];
+
+                pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+                r = pixelColor.R;
+                g = pixelColor.G;
+                b = pixelColor.B;
+
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(r, 0));
+                counter++;
+                if (temp == 7)
+                {
+                    sizeByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(g, 0));
+                counter++;
+                if (temp == 7)
+                {
+                    sizeByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(b, 0));
+                counter++;
+                if (temp == 7)
+                {
+                    sizeByte[byteIndex] = aByte;
+                    byteIndex++;
+                } temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(r, 1));
+                counter++;
+                if (temp == 7)
+                {
+                    sizeByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(g, 1));
+                counter++;
+                if (temp == 7)
+                {
+                    sizeByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(b, 1));
+                counter++;
+                if (temp == 7)
+                {
+                    sizeByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+            }
+
+            a = randomer.Next(maxSize);
+            choose = idx[a];
+            idx[a] = idx[--maxSize];
+
+            pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+            r = pixelColor.R;
+            g = pixelColor.G;
+            b = pixelColor.B;
+
+            temp = counter % 8;
+            aByte = SetBit(aByte, temp, GetBit(r, 0));
+            counter++;
+            temp = counter % 8;
+            aByte = SetBit(aByte, temp, GetBit(g, 0));
+            sizeByte[3] = aByte;
+
+            aByte = SetBit(aByte, 0, GetBit(b, 0));
+            aByte = SetBit(aByte, 1, GetBit(r, 1));
+            aByte = SetBit(aByte, 2, GetBit(g, 1));
+            aByte = SetBit(aByte, 3, GetBit(b, 1));
+
+            int maxIdx = BitConverter.ToInt32(sizeByte, 0);
+
+            byte[] extractedByte = new byte[maxIdx];
+
+            int maxBits = 8 * maxIdx;
+
+            maxIdx = (maxBits + 1) / 6;
+
+            byteIndex = 0;
+            counter = 4;
+
+            for (int i = 0; i < 3; i++)
+            {
+                a = randomer.Next(maxSize);
+                choose = idx[a];
+                idx[a] = idx[--maxSize];
+
+                pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+                r = pixelColor.R;
+                g = pixelColor.G;
+                b = pixelColor.B;
+
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(r, 0));
+                counter++;
+                if (temp == 7)
+                {
+                    extByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(g, 0));
+                counter++;
+                if (temp == 7)
+                {
+                    extByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(b, 0));
+                counter++;
+                if (temp == 7)
+                {
+                    extByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(r, 1));
+                counter++;
+                if (temp == 7)
+                {
+                    extByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(g, 1));
+                counter++;
+                if (temp == 7)
+                {
+                    extByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+                temp = counter % 8;
+                aByte = SetBit(aByte, temp, GetBit(b, 1));
+                counter++;
+                if (temp == 7)
+                {
+                    extByte[byteIndex] = aByte;
+                    byteIndex++;
+                }
+            }
+
+            a = randomer.Next(maxSize);
+            choose = idx[a];
+            idx[a] = idx[--maxSize];
+
+            pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+            r = pixelColor.R;
+            g = pixelColor.G;
+            b = pixelColor.B;
+
+            temp = counter % 8;
+            aByte = SetBit(aByte, temp, GetBit(r, 0));
+            counter++;
+            temp = counter % 8;
+            aByte = SetBit(aByte, temp, GetBit(g, 0));
+            extByte[2] = aByte;
+            aByte = SetBit(aByte, 0, GetBit(b, 0));
+            aByte = SetBit(aByte, 1, GetBit(r, 1));
+            aByte = SetBit(aByte, 2, GetBit(g, 1));
+            aByte = SetBit(aByte, 3, GetBit(b, 1));
+
+            String ext = System.Text.Encoding.Default.GetString(extByte);
+            extension = ext;
+
+            byteIndex = 0;
+            counter = 4;
+
+            for (int i = 0; i < maxIdx; i++)
+            {
+                a = randomer.Next(maxSize);
+                choose = idx[a];
+                idx[a] = idx[--maxSize];
+
+                pixelColor = bmp.GetPixel(choose % bmp.Width, choose / bmp.Width);
+
+                r = pixelColor.R;
+                g = pixelColor.G;
+                b = pixelColor.B;
+
+                if (6 * i + 4 < maxBits)
+                {
+                    temp = counter % 8;
+                    aByte = SetBit(aByte, temp, GetBit(r, 0));
+                    counter++;
+                    if (temp == 7)
+                    {
+                        extractedByte[byteIndex] = aByte;
+                        byteIndex++;
+                    }
+                }
+                if (6 * i + 5 < maxBits)
+                {
+                    temp = counter % 8;
+                    aByte = SetBit(aByte, temp, GetBit(g, 0));
+                    counter++;
+                    if (temp == 7)
+                    {
+                        extractedByte[byteIndex] = aByte;
+                        byteIndex++;
+                    }
+                }
+                if (6 * i + 6 < maxBits)
+                {
+                    temp = counter % 8;
+                    aByte = SetBit(aByte, temp, GetBit(b, 0));
+                    counter++;
+                    if (temp == 7)
+                    {
+                        extractedByte[byteIndex] = aByte;
+                        byteIndex++;
+                    }
+                }
+                if (6 * i + 7 < maxBits)
+                {
+                    temp = counter % 8;
+                    aByte = SetBit(aByte, temp, GetBit(r, 1));
+                    counter++;
+                    if (temp == 7)
+                    {
+                        extractedByte[byteIndex] = aByte;
+                        byteIndex++;
+                    }
+                }
+                if (6 * i + 8 < maxBits)
+                {
+                    temp = counter % 8;
+                    aByte = SetBit(aByte, temp, GetBit(g, 1));
+                    counter++;
+                    if (temp == 7)
+                    {
+                        extractedByte[byteIndex] = aByte;
+                        byteIndex++;
+                    }
+                }
+                if (6 * i + 9 < maxBits)
+                {
+                    temp = counter % 8;
+                    aByte = SetBit(aByte, temp, GetBit(b, 1));
+                    counter++;
+                    if (temp == 7)
+                    {
+                        extractedByte[byteIndex] = aByte;
+                        byteIndex++;
+                    }
+                }
+            }
+            return extractedByte;
         }
 
         private Byte[] ExtractByteFromBitmap(Bitmap bmp)
@@ -539,8 +984,10 @@ namespace WindowsFormsApplication1
                 List<Byte[]> tempByteArr = new List<byte[]>();
 
                 Byte[] tempByte;
-
-                tempByte = ExtractByteFromBitmap(arraybmp[0]);
+                if (radio1Bit.Checked)
+                    tempByte = ExtractByteFromBitmap(arraybmp[0]);
+                else
+                    tempByte = ExtractByteFromBitmap2bit(arraybmp[0]);
                 if (radioEncrypt.Checked)
                     if (txtKey.Text == string.Empty)
                         throw new Exception("Key must not be null");
@@ -551,7 +998,10 @@ namespace WindowsFormsApplication1
 
                 for (int i = 0; i < numFramesToDecode; i++)
                 {
-                    tempByte = ExtractByteFromBitmap(arraybmp[0]);
+                    if (radio1Bit.Checked)
+                        tempByte = ExtractByteFromBitmap(arraybmp[0]);
+                    else
+                        tempByte = ExtractByteFromBitmap2bit(arraybmp[0]);
                     if (radioEncrypt.Checked)
                         if (txtKey.Text == string.Empty)
                             throw new Exception("Key must not be null");
@@ -606,7 +1056,10 @@ namespace WindowsFormsApplication1
                         throw new Exception("Key must not be null");
                     else
                         encrypt(ref numFrames, txtKey.Text);
-                tempbmp = HideByteIntoBitmap(numFrames, txtKey.Text, arraybmp[0]);
+                if (radio1Bit.Checked)
+                    tempbmp = HideByteIntoBitmap(numFrames, txtKey.Text, arraybmp[0]);
+                else
+                    tempbmp = HideByteIntoBitmap2bit(numFrames, txtKey.Text, arraybmp[0]);
                 arraybmpresult.Add(tempbmp);
                 arraybmp.RemoveAt(0);
 
@@ -618,7 +1071,10 @@ namespace WindowsFormsApplication1
                             throw new Exception("Key must not be null");
                         else
                             encrypt(ref temp, txtKey.Text);
-                    tempbmp = HideByteIntoBitmap(temp, txtKey.Text, arraybmp[0]);
+                    if (radio1Bit.Checked)
+                        tempbmp = HideByteIntoBitmap(temp, txtKey.Text, arraybmp[0]);
+                    else
+                        tempbmp = HideByteIntoBitmap2bit(temp, txtKey.Text, arraybmp[0]);
                     arraybmpresult.Add(tempbmp);
                     arrayBytes.RemoveAt(0);
                     arraybmp.RemoveAt(0);
